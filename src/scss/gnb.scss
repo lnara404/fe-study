@@ -1,0 +1,15 @@
+nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  height: 80px;
+  padding: 0 20px;
+  margin-bottom: 40px;
+  font-size: 15px;
+  font-weight: bold;
+  background: #fff;
+  box-shadow: 4px 0 10px 0 rgb(0 0 0 / 10%);
+}
