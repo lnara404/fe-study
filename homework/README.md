@@ -6,3 +6,7 @@
 
 2. 2주차 과제
 - [문제](https://school.programmers.co.kr/learn/courses/30/lessons/92334)
+
+3. 3주차 과제
+- [문제1](https://school.programmers.co.kr/learn/courses/30/lessons/150370)
+- [문제2](https://school.programmers.co.kr/learn/courses/30/lessons/87389)
