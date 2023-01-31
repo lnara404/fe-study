@@ -1,6 +1,6 @@
-import { ProductPropsType } from "../../types"
+import { Product } from '../../graphql/products';
 
-const ProductDetail = ({ item: { title, image, description, price } }: { item: ProductPropsType }) => {
+const ProductDetail = ({ item: { title, image, description, price } }: { item: Product }) => {
   return (
     <div className="product-detail">
       <div className="product-detail__img">
