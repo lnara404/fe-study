@@ -18,7 +18,19 @@ export const ADD_CART = gql`
       amount
     }
   }
-`
+`;
+
+export const UPDATE_CART = gql`
+  mutation UPDATE_CART($id: string, $amount: number) {
+    cart(id: $id, amount: $amount) {
+      id
+      title
+      image
+      price
+      amount
+    }
+  }
+`;
 
 export const GET_CART = gql`
   query GET_CART {
