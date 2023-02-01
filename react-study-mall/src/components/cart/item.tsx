@@ -1,6 +1,6 @@
 import { SyntheticEvent } from "react";
 import { QueryClient, useMutation } from "react-query";
-import { CartType, UPDATE_CART } from "../../graphql/cart";
+import { CartType, DELETE_CART, UPDATE_CART } from "../../graphql/cart";
 import { getClient, graphqlFetcher, QueryKeys } from "../../queryClient";
 
 const CartItem = ({
@@ -41,6 +41,15 @@ const CartItem = ({
     }
   );
 
+  const { mutate: delectCart } = useMutation(({ id }: {id: string}) => 
+    graphqlFetcher(DELETE_CART, { id }),
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries(QueryKeys.CART)
+      }
+    }
+  )
+
   const handleUpdateAmount = (e: SyntheticEvent) => {
     const amount = Number((e.target as HTMLInputElement).value);
     updateCart(
@@ -48,12 +57,18 @@ const CartItem = ({
     )
   };
 
+  const handleDelectCart = () => {
+    delectCart({ id })
+  };
+
   return (
     <li className="cart-item">
+      <input type="checkbox" />
       <img className="cart-item__image" src={image} alt="" />
       <p className="cart-item__title">{title}</p>
       <p className="cart-item__price">{price}</p>
-      <input type="number" value={amount} className="cart-item__amount" onChange={handleUpdateAmount} />
+      <input className="cart-item__amount" type="number" value={amount} onChange={handleUpdateAmount} />
+      <button className="cart-item__button" type="button" onClick={handleDelectCart}>삭제</button>
     </li>
   )
 }
