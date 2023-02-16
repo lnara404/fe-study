@@ -1,7 +1,7 @@
 /* 2주차 과제 - 문제 */
 
 function solution(id_list, report, k) {
-  var answer = [];
+  let answer = [];
   let reportedCount = {}; // 신고 당한 횟수
   let reportedUser = {}; // 신고 한 사람
   let mailCount = {}; // k번 이상 신고 당한 id를 신고한 사람이 받을 메일 수

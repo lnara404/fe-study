@@ -1,6 +1,6 @@
 /* 1주차 과제 - 문제 1 */
 function solution(message) {
-  var answer = 0;
+  let answer = 0;
 
   answer = message.length * 2;
 
